@@ -1,0 +1,40 @@
+﻿<%@ Master Language="VB" CodeFile="MasterPage.master.vb" Inherits="MasterPage" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head runat="server">
+        <meta charset="utf-8" />
+        <link href="StyleSheet.css" rel="stylesheet" type="text/css" />
+        <title></title>
+        <asp:ContentPlaceHolder id="head" runat="server">        
+        </asp:ContentPlaceHolder>
+    </head>
+
+    <body>  
+        <form id="form1" Runat="Server">
+        <nav class="navbar">               
+            <a href="Default.aspx" ><img src="Images\Icons\pv-white1-64.png" style="float: left; position: relative; top: -16px;"/></a>
+            <a href="Buy.aspx""><img src="Images\Icons\shopping-cart-24.png"/>Buy</a>
+            <a href="Sell.aspx""><img src="Images\Icons\sell-24.png"/>Sell</a>
+            <a href="AboutUs.aspx""><img src="Images\Icons\check-24.png"/>About Us</a>
+            <a href="Bibliography.aspx""><img src="Images\Icons\list-24.png"/>Credits</a>      
+            <div id="divsignup" runat="server"><a href="LogIn.aspx", id="btnLogin"  style="float: right;" ><img src="Images\Icons\cursor-in-window-24.png"/>Log In</a></div>
+            <asp:LinkButton id="btnLogOut" runat="server" CssClass="btnLogOut" style="float: right;" CausesValidation="false"><img src="Images\Icons\cursor-in-window-24.png"/>Log Out</asp:LinkButton>
+            <asp:Label ID="lblBalance" runat="server" CssClass="lblBalance" Text="Balance: $0.00"></asp:Label>
+            <asp:Label ID="lblEmail" runat="server" CssClass="lblEmail" Text="user@goes.here"></asp:Label>
+        </nav>
+
+        <div class="content" style="margin-bottom: 250px;">
+            <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">            
+            </asp:ContentPlaceHolder>
+            </div>
+        </form>
+
+        <footer class="footer" style="height: 16px;">
+        <div id="iconslink", style="font-size: 12px; text-align: center;">
+            <a href="https://icons8.com/">Icons by Icons8</a>
+        </div>
+        </footer>
+    </body>
+</html>
